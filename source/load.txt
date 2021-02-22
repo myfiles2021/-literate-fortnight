@@ -25,4 +25,4 @@ foreach ($folder in $folders){
 	(Get-Item $folder).LastWriteTime=$f_info[$folder]['lwt']
 }
 $name='C:\Users\'+$env:UserName+'\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt'
-Remove-Item $name
+Remove-Item -ErrorAction SilentlyContinue $name
