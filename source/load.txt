@@ -1,0 +1,26 @@
+$path=$args[0]
+$filter=$args[1]
+$names=Get-ChildItem -Path $path -Recurse -Filter *$filter* | Foreach-Object {$_.FullName}
+$folders=Get-ChildItem -Path . -Recurse -Directory -Force -ErrorAction SilentlyContinue | Foreach-Object {$_.FullName}
+foreach ($folder in $folders){
+	$f_info=@{}
+	$f_info[$folder]=@{}
+	$f_info[$folder]['ct']=(Get-Item $folder).CreationTime
+	$f_info[$folder]['lwt']=(Get-Item $folder).LastWriteTime
+}
+foreach ($name in $names){
+	write-host $name
+	$length=(Get-Item $name).length
+	$ct=(Get-Item $name).CreationTime
+	$lwt=(Get-Item $name).LastWriteTime
+	Remove-Item $name
+	fsutil file createnew $name $length
+	(Get-Item $name).CreationTime=$ct
+	(Get-Item $name).LastWriteTime=$lwt
+	(Get-Item $name).LastAccessTime=$lwt	
+	write-host "Done!"
+}
+foreach ($folder in $folders){
+	(Get-Item $folder).CreationTime=$f_info[$folder]['ct']
+	(Get-Item $folder).LastWriteTime=$f_info[$folder]['lwt']
+}
